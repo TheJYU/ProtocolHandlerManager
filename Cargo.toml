@@ -1,0 +1,21 @@
+[package]
+name = "protocol-handler-manager"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.31" # GUI framework
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+shell-words = "1.1" # Safe command-line argument splitting
+directories = "6.0" # XDG standard path resolution
+urlencoding = "2.1" # URL decoding
+shellexpand = "3.1" # Environment variable and tilde expansion
+rfd = "0.15" # Native file dialogs
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+opt-level = "z"
+
